@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 225 # Hz
+    update_rate: 120 # Hz
 
     forward_velocity_controller:
       type: forward_command_controller/ForwardCommandController
@@ -50,6 +50,10 @@ feedback_joint_position_trajectory_controller:
     state_interfaces:
       - position
       - velocity
+    state_publish_rate: 40.0
+    command_publish_rate: 40.0
+    allow_nonzero_velocity_at_trajectory_end: false
+    interpolation_method: splines
 
 feedback_joint_velocity_trajectory_controller:
   ros__parameters:
@@ -64,3 +68,43 @@ feedback_joint_velocity_trajectory_controller:
     state_interfaces:
       - position
       - velocity
+    state_publish_rate: 40.0
+    command_publish_rate: 40.0
+    allow_nonzero_velocity_at_trajectory_end: false
+    interpolation_method: splines
+    gains:
+      axis_a:
+        p: 0.5
+        i: 0.0
+        d: 0.0
+        i_clamp_min: -1.0
+        i_clamp_max: 1.0
+        ff_velocity_scale: 1.0
+      axis_b:
+        p: 0.5
+        i: 0.0
+        d: 0.0
+        i_clamp_min: -1.0
+        i_clamp_max: 1.0
+        ff_velocity_scale: 1.0
+      axis_c:
+        p: 0.5
+        i: 0.0
+        d: 0.0
+        i_clamp_min: -1.0
+        i_clamp_max: 1.0
+        ff_velocity_scale: 1.0
+      axis_d:
+        p: 0.5
+        i: 0.0
+        d: 0.0
+        i_clamp_min: -1.0
+        i_clamp_max: 1.0
+        ff_velocity_scale: 1.0
+      axis_e:
+        p: 0.5
+        i: 0.0
+        d: 0.0
+        i_clamp_min: -1.0
+        i_clamp_max: 1.0
+        ff_velocity_scale: 1.0

@@ -30,7 +30,7 @@
     <link name="${prefix}m3_inline_link">
       <visual>
         <geometry>
-          <mesh filename="file://$(find ${description_package})/meshes/M3-INLINE.stl" />
+          <mesh filename="package://${description_package}/meshes/M3-INLINE.stl" />
         </geometry>
         <origin rpy="0 0 0" xyz="0 0 0" />
         <material name="${prefix}black" />
@@ -58,7 +58,7 @@
     <link name="${prefix}m2_1_1_link">
       <visual>
         <geometry>
-          <mesh filename="file://$(find ${description_package})/meshes/M2-1-1.stl" />
+          <mesh filename="package://${description_package}/meshes/M2-1-1.stl" />
         </geometry>
         <origin rpy="0 0 0" xyz="0 0 0" />
         <material name="${prefix}black" />
@@ -86,7 +86,7 @@
     <link name="${prefix}m2_joint_link">
       <visual>
         <geometry>
-          <mesh filename="file://$(find ${description_package})/meshes/M2.stl" />
+          <mesh filename="package://${description_package}/meshes/M2.stl" />
         </geometry>
         <origin rpy="0 0 0" xyz="0 0 0" />
         <material name="${prefix}black" />
@@ -126,7 +126,7 @@
     <link name="${prefix}m2_1_2_link">
       <visual>
         <geometry>
-          <mesh filename="file://$(find ${description_package})/meshes/M2-1-3.stl" />
+          <mesh filename="package://${description_package}/meshes/M2-1-3.stl" />
         </geometry>
         <origin rpy="0 0 0" xyz="0 0 0" />
         <material name="${prefix}black" />
@@ -154,8 +154,7 @@
     <link name="${prefix}m1_link">
       <visual>
         <geometry>
-          <mesh
-            filename="file://$(find ${description_package})/meshes/RS1-100-101-123.stl" />
+          <mesh filename="package://${description_package}/meshes/RS1-100-101-123.stl" />
         </geometry>
         <origin rpy="0 -1.5707 0" xyz="0 0 0" />
         <material name="${prefix}black" />

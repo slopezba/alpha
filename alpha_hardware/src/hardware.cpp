@@ -185,9 +185,11 @@ hardware_interface::return_type AlphaHardware::prepare_command_mode_switch(
     return hardware_interface::return_type::ERROR;
   }
 
-  // Set the new command modes
-  for (std::size_t i = 0; i < info_.joints.size(); i++) {
-    control_modes_[i] = new_modes[i];
+  // Set the new command modes if a new controller is switch
+  if (!new_modes.empty()){
+    for (std::size_t i = 0; i < info_.joints.size(); i++) {
+      control_modes_[i] = new_modes[i];
+    }
   }
 
   return hardware_interface::return_type::OK;

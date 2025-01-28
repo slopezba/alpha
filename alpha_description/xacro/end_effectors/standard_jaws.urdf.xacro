@@ -11,8 +11,7 @@
     <link name="${prefix}base_link">
       <visual>
         <geometry>
-          <mesh
-            filename="file://$(find ${description_package})/meshes/end_effectors/RS1-124.stl" />
+          <mesh filename="package://${description_package}/meshes/end_effectors/RS1-124.stl" />
         </geometry>
         <material name="${prefix}black" />
       </visual>
@@ -39,8 +38,7 @@
     <link name="${prefix}rs1_130_link">
       <visual>
         <geometry>
-          <mesh
-            filename="file://$(find ${description_package})/meshes/end_effectors/RS1-130.stl" />
+          <mesh filename="package://${description_package}/meshes/end_effectors/RS1-130.stl" />
         </geometry>
         <material name="${prefix}black" />
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -68,8 +66,7 @@
     <link name="${prefix}rs1_139_link">
       <visual>
         <geometry>
-          <mesh
-            filename="file://$(find ${description_package})/meshes/end_effectors/RS1-139.stl" />
+          <mesh filename="package://${description_package}/meshes/end_effectors/RS1-139.stl" />
         </geometry>
         <material name="${prefix}black" />
         <origin xyz="0 0 0" rpy="0 0 0" />
