@@ -22,6 +22,7 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
   rclcpp_lifecycle
   pluginlib
   hardware_interface
+  sensor_msgs
 )
 
 foreach(Dependency IN ITEMS ${THIS_PACKAGE_INCLUDE_DEPENDS})
@@ -34,6 +35,7 @@ include_directories(
 
 add_library(${PROJECT_NAME} SHARED
   src/hardware.cpp
+  src/stonefish.cpp
 )
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 ament_target_dependencies(${PROJECT_NAME} ${THIS_PACKAGE_INCLUDE_DEPENDS})
@@ -71,3 +73,4 @@ ament_export_libraries(${PROJECT_NAME})
 ament_export_dependencies(${THIS_PACKAGE_INCLUDE_DEPENDS})
 
 ament_package()
+

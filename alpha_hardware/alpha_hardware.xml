@@ -1,4 +1,5 @@
 <library path="alpha_hardware">
+  <!-- Clase existente para AlphaHardware -->
   <class name="alpha_hardware/AlphaHardware"
     type="alpha::hardware::AlphaHardware"
     base_class_type="hardware_interface::SystemInterface">
@@ -7,4 +8,15 @@
       interface-type.
     </description>
   </class>
+
+  <!-- Nueva clase para StonefishHardware -->
+  <class name="alpha_hardware/alpha_stonefish_hardware"
+    type="alpha_stonefish_hardware"
+    base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Stonefish hardware interface for ROS 2 control using a system hardware
+      interface-type.
+    </description>
+  </class>
 </library>
+
