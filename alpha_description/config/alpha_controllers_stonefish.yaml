@@ -1,0 +1,135 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 40 # Hz
+
+    forward_velocity_controller:
+      type: forward_command_controller/ForwardCommandController
+
+    forward_position_controller:
+      type: forward_command_controller/ForwardCommandController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    feedback_joint_position_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    feedback_joint_velocity_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+forward_velocity_controller:
+  ros__parameters:
+    joints:
+      - bluerov/alpha_axis_a
+      - bluerov/alpha_axis_b
+      - bluerov/alpha_axis_c
+      - bluerov/alpha_axis_d
+      - bluerov/alpha_axis_e
+    interface_name: velocity
+
+forward_position_controller:
+  ros__parameters:
+    joints:
+      - bluerov/alpha_axis_a
+      - bluerov/alpha_axis_b
+      - bluerov/alpha_axis_c
+      - bluerov/alpha_axis_d
+      - bluerov/alpha_axis_e
+    interface_name: position
+
+feedback_joint_position_trajectory_controller:
+  ros__parameters:
+    joints:
+      - bluerov/alpha_axis_a
+      - bluerov/alpha_axis_b
+      - bluerov/alpha_axis_c
+      - bluerov/alpha_axis_d
+      - bluerov/alpha_axis_e
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+
+feedback_joint_velocity_trajectory_controller:
+  ros__parameters:
+    joints:
+      - bluerov/alpha_axis_a
+      - bluerov/alpha_axis_b
+      - bluerov/alpha_axis_c
+      - bluerov/alpha_axis_d
+      - bluerov/alpha_axis_e
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
+
+joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - bluerov/alpha_axis_a
+      - bluerov/alpha_axis_b
+      - bluerov/alpha_axis_c
+      - bluerov/alpha_axis_d
+      - bluerov/alpha_axis_e
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 40.0
+    command_publish_rate: 40.0
+    allow_nonzero_velocity_at_trajectory_end: false
+    interpolation_method: splines
+
+    # Constraints
+    # constraints:
+    #   goal_time: 0.5
+    #   stopped_velocity_tolerance: 0.001
+    #   bluerov/alpha_axis_a: { trajectory: 0.05, goal: 0.05 }
+    #   bluerov/alpha_axis_b: { trajectory: 0.05, goal: 0.05 }
+    #   bluerov/alpha_axis_c: { trajectory: 0.05, goal: 0.05 }
+    #   bluerov/alpha_axis_d: { trajectory: 0.05, goal: 0.05 }
+    #   bluerov/alpha_axis_e: { trajectory: 0.05, goal: 0.05 }
+
+    # Gains
+    gains:
+      bluerov/alpha_axis_a:
+        p: 0.5
+        i: 0.0
+        d: 0.0
+        i_clamp_min: -1.0
+        i_clamp_max: 1.0
+        ff_velocity_scale: 1.0
+      bluerov/alpha_axis_b:
+        p: 0.5
+        i: 0.0
+        d: 0.0
+        i_clamp_min: -1.0
+        i_clamp_max: 1.0
+        ff_velocity_scale: 1.0
+      bluerov/alpha_axis_c:
+        p: 0.5
+        i: 0.0
+        d: 0.0
+        i_clamp_min: -1.0
+        i_clamp_max: 1.0
+        ff_velocity_scale: 1.0
+      bluerov/alpha_axis_d:
+        p: 0.5
+        i: 0.0
+        d: 0.0
+        i_clamp_min: -1.0
+        i_clamp_max: 1.0
+        ff_velocity_scale: 1.0
+      bluerov/alpha_axis_e:
+        p: 0.5
+        i: 0.0
+        d: 0.0
+        i_clamp_min: -1.0
+        i_clamp_max: 1.0
+        ff_velocity_scale: 1.0
