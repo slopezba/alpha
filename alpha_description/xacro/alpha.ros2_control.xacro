@@ -19,7 +19,7 @@
 
       <xacro:if value="$(arg use_sim)">
         <hardware>
-          <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+          <plugin>alpha_hardware/alpha_stonefish_hardware</plugin>
         </hardware>
       </xacro:if>
 
