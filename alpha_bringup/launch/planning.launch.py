@@ -192,6 +192,8 @@ def generate_launch_description() -> LaunchDescription:
         "publish_geometry_updates": True,
         "publish_state_updates": True,
         "publish_transforms_updates": True,
+        "publish_robot_description": True,
+        "publish_robot_description_semantic": True
     }
 
     # Declare ROS 2 nodes
