@@ -32,10 +32,10 @@ public:
         // Configurar ROS 2: nodo, subscripción y publicación
         node_ = rclcpp::Node::make_shared("alpha_stonefish_hardware");
         joint_command_pub_ = node_->create_publisher<sensor_msgs::msg::JointState>(
-            "/bluerov/alpha/desired_joint_states", 10);
+            "/peacetolero/alpha/desired_joint_states", 10);
 
         joint_state_sub_ = node_->create_subscription<sensor_msgs::msg::JointState>(
-            "/joint_states", 10,
+            "/peacetolero/joint_states", 10,
             std::bind(&alpha_stonefish_hardware::joint_state_callback, this, std::placeholders::_1));
 
         return CallbackReturn::SUCCESS;
