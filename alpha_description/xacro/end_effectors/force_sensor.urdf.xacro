@@ -38,7 +38,7 @@
     <link name="${prefix}force_sensor_link">
       <visual>
         <geometry>
-          <mesh filename="package://${description_package}/meshes/end_effectors/force_sensor.stl" />
+          <mesh filename="package://${description_package}/meshes/end_effectors/force_sensor.dae" />
         </geometry>
         <origin xyz="0 0 0.01" rpy="0 0 0"/>
         <material name="${prefix}black" />
@@ -78,7 +78,7 @@
     </joint>
 
     <joint name="${prefix}force_sensor_joint" type="fixed">
-      <origin xyz="0 0 0.02" rpy="0 0 0"/>
+      <origin xyz="-0.01 0.0 0.0" rpy="1.57 0.0 1.57"/>
       <parent link="${prefix}tool"/>
       <child link="${prefix}force_sensor_link"/>
     </joint>
