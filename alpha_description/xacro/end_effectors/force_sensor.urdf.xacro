@@ -71,13 +71,13 @@
     </link>
 
     <joint name="${prefix}4N_joint" type="fixed">
-      <origin xyz="0 0.03 0.0" rpy="1.57 0.0 1.57" />
+      <origin xyz="0 -0.03 0.0" rpy="1.57 0.0 1.57" />
       <parent link="${prefix}tool" />
       <child link="${prefix}4N" />
     </joint>
 
     <joint name="${prefix}111N_joint" type="fixed">
-      <origin xyz="0 -0.03 0.0" rpy="1.57 0.0 1.57" />
+      <origin xyz="0 0.03 0.0" rpy="1.57 0.0 1.57" />
       <parent link="${prefix}tool" />
       <child link="${prefix}111N" />
     </joint>
