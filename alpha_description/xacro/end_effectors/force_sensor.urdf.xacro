@@ -35,7 +35,7 @@
       </inertial>
     </link>
 
-    <link name="${prefix}force_sensor_link">
+    <link name="${prefix}link">
       <visual>
         <geometry>
           <mesh filename="package://${description_package}/meshes/end_effectors/force_sensor.dae" />
@@ -64,6 +64,24 @@
       </inertial>
     </link>
 
+    <link name="${prefix}4N">
+    </link>
+
+    <link name="${prefix}111N">
+    </link>
+
+    <joint name="${prefix}4N_joint" type="fixed">
+      <origin xyz="0 0.03 0.0" rpy="1.57 0.0 1.57" />
+      <parent link="${prefix}tool" />
+      <child link="${prefix}4N" />
+    </joint>
+
+    <joint name="${prefix}111N_joint" type="fixed">
+      <origin xyz="0 -0.03 0.0" rpy="1.57 0.0 1.57" />
+      <parent link="${prefix}tool" />
+      <child link="${prefix}111N" />
+    </joint>
+
     <joint name="${prefix}base_joint" type="fixed">
       <xacro:insert_block name="origin" />
       <parent link="${parent}" />
@@ -80,7 +98,7 @@
     <joint name="${prefix}force_sensor_joint" type="fixed">
       <origin xyz="-0.01 0.0 0.0" rpy="1.57 0.0 1.57"/>
       <parent link="${prefix}tool"/>
-      <child link="${prefix}force_sensor_link"/>
+      <child link="${prefix}link"/>
     </joint>
 
   </xacro:macro>
